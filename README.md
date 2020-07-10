@@ -24,9 +24,17 @@ Whether or not the changed Helm Charts have a correct category.
 ## Example usage
 
 ```
-uses: bitnami/chart-categories-action@master
-with:
-  command: 'check-categories'
+check-categories:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Fetch history
+      run: git fetch --prune --unshallow
+
+    - name: Check categories
+      uses: bitnami/chart-categories-action@master
 ```
 
 See: https://github.com/bitnami/charts/blob/master/.github/workflows/lint-test.yaml

@@ -13,7 +13,11 @@ annotations:
 
 ### `command`
 
-**Required** The command to pass to the `category-checker.sh` script. Default `check-categories`. (At this moment only `check-categories` is supported)
+**Required** The command to pass to the `category-checker.sh` script. **Default**: `check-categories`. (At this moment only `check-categories` is supported)
+
+### `categories-file`
+
+The path to the file containing the categories inside your Helm Chart repository. **Default**: `CHART_CATEGORIES`.
 
 ## Outputs
 
@@ -35,13 +39,16 @@ check-categories:
 
     - name: Check categories
       uses: bitnami/chart-categories-action@master
+      with:
+        command: 'check-categories'
+        categories-file: 'my_Categories_file'
 ```
 
 See: https://github.com/bitnami/charts/blob/master/.github/workflows/lint-test.yaml
 
 ## Pending improvements
 
-- Add option to pass your own list of categories.
+- [X] Add option to pass your own list of categories.
 
 ## How to debug this action locally
 

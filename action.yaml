@@ -5,6 +5,11 @@ inputs:
     description: 'Parameters for the chart-testing tool'
     required: true
     default: 'check-categories'
+  categories-file:
+    description: 'File containing the list of allowed categories'
+    required: false
+    default: 'CHART_CATEGORIES'
+
 outputs:
   categories-are-correct:
     description: 'Wheter or not the categories are correct'
@@ -13,4 +18,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.command }}
-
+    - ${{ inputs.categories-file }}

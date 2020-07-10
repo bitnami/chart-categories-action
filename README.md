@@ -34,3 +34,17 @@ See: https://github.com/bitnami/charts/blob/master/.github/workflows/lint-test.y
 ## Pending improvements
 
 - Add option to pass your own list of categories.
+
+## How to debug this action locally
+
+Build the docker image:
+
+```
+docker build . -t <image-name>
+```
+
+Run the image mounting your Helm Charts repository:
+
+```
+docker run --rm -v <absolute-path-to-your-repo>:/github/workspace --workdir /github/workspace -it <image-name> check-categories
+```

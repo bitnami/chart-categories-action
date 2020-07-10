@@ -8,6 +8,8 @@ RUN wget https://github.com/mikefarah/yq/releases/download/3.3.2/yq_linux_amd64 
 # Use our minideb image that is lower than chart-testing and has a bash interpreter
 FROM bitnami/minideb:buster-snapshot-20200708T204754Z
 
+RUN install_packages git
+
 COPY --from=builder /usr/local/bin/yq /usr/local/bin/yq
 COPY --from=builder /usr/local/bin/ct /usr/local/bin/ct
 

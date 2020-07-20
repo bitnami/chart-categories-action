@@ -5,7 +5,7 @@ RUN wget https://github.com/mikefarah/yq/releases/download/3.3.2/yq_linux_amd64 
     chmod +x yq_linux_amd64 && \
     mv yq_linux_amd64 /usr/local/bin/yq
 
-FROM bitnami/git:2.27.0-debian-10-r38
+FROM bitnami/git:latest
 
 COPY --from=builder /usr/local/bin/yq /usr/local/bin/yq
 COPY --from=builder /usr/local/bin/ct /usr/local/bin/ct

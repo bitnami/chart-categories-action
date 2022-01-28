@@ -38,7 +38,7 @@ check-categories:
       run: git fetch --prune --unshallow
 
     - name: Check categories
-      uses: bitnami/chart-categories-action@master
+      uses: kungze/chart-categories-action@main
       with:
         command: 'check-categories'
         categories-file: 'my_Categories_file'

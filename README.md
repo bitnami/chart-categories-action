@@ -4,7 +4,7 @@ This action checks that all the Helm Charts in the repository have a category an
 
 The categories should be set at the `Chart.yaml` file in the way:
 
-```
+```yaml
 annotations:
   category: category-name
 ```
@@ -27,7 +27,7 @@ Whether or not the changed Helm Charts have a correct category.
 
 ## Example usage
 
-```
+```yaml
 check-categories:
   runs-on: ubuntu-latest
   steps:
